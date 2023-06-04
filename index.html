@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .content {
+            display: grid;
+            /*grid-template-columns: 1fr 1fr 1fr;
+            divide divs in 3 columns of 1fragment each
+            grid-template-rows: 2fr 1fr 1fr 2fr;
+            divide div in 4 rows of 2fragment and 1fragment*/
+            grid-template-columns: repeat(6, 1fr);
+            /*divide divs in 6 columns of 1fragment each*/
+            grid-template-rows: repeat(4, 1fr);
+            /*divide divs in 4 rows of 1fragment each*/
+            gap: 5px;
+            /*space between cells equal 5px*/
+        }
+        div {
+            background: cadetblue;
+            padding: 30px;
+            text-align: center;
+        }
+        div:nth-of-type(odd){
+            background: burlywood;
+        }
+        .one {
+            /*
+            1 _ _ _ _ _ _ 
+            2|&|&|_|_|_|_|
+            3|_|_|_|_|_|_|
+            4|_|_|_|_|_|_|
+             1 2 3 4 5 6 7
+            6 columns equals 7 line columns
+            3 rows equals 4 line rows
+            */
+            grid-column-start: 1;
+            /*div class one starts at line column 1*/
+            grid-column-end: 3;
+            /*div class one ends at line column 3*/
+            /*
+            conclusion: div class "one" ocuppies two columns
+            and one row
+            note: Its the same write:
+            grid-column: 1 / 3;
+            */
+        }
+        .two {
+            grid-column: 3 / 7;
+            /*
+            conclusion: div class "two" ocuppies four columns
+            and one row
+            */
+        }
+        .three {
+            grid-column: 1 / 4;
+            grid-row: 2 / 4;
+        }
+    </style>
+
+</head>
+<body>
+    <main class="content">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+        <div class="seven">7</div>
+        <div class="eight">8</div>
+        <div class="nine">9</div>
+        <div class="ten">10</div>
+        <div class="eleven">11</div>
+        <div class="twelve">12</div>
+        
+    </main>
+</body>
+</html>
